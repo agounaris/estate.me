@@ -45,3 +45,34 @@ INSERT INTO `User` (`id`, `username`, `password`, `title`, `accessLevel`) VALUES
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+--
+-- Table structure for table `Entry`
+--
+
+CREATE TABLE IF NOT EXISTS `Entry` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(45) NOT NULL,
+  `house_number` varchar(50) NOT NULL,
+  `street` varchar(150) NOT NULL,
+  `postcode` varchar(10) NOT NULL,
+  `bedrooms` tinyint(4) NOT NULL,
+  `date_added` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  `price` int(11) NOT NULL,
+  `image` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Table structure for table `Photo`
+--
+
+CREATE TABLE IF NOT EXISTS `Photo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `entry_id` int(11) NOT NULL,
+  `caption` varchar(200) NOT NULL,
+  `path` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `entry_id` (`entry_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
