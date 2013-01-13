@@ -78,7 +78,7 @@ class EntryController extends Controller
             $model->image = $fileName;			
 
 			if($model->save()) {
-				$uploadedFile->saveAs(Yii::app()->basePath.'/../images/'.$fileName);  
+				$uploadedFile->saveAs(Yii::app()->basePath.'/../assets/'.$fileName);  
 				$this->redirect(array('view','id'=>$model->id));
 			}
 				

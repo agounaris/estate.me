@@ -14,13 +14,14 @@ $this->pageTitle=Yii::app()->name;
           $class = 'item active';
           $i = 1;
         }
-        $images[] = array('image'=>Yii::app()->baseUrl.'/images/'.$entry->image, 'label'=>$entry->house_number.' '.$entry->street, 'caption'=>$entry->bedrooms.' bedrooms,  '.$entry->price.' per month');
+        $images[] = array('image'=>Yii::app()->baseUrl.'/assets/'.$entry->image, 'label'=>$entry->house_number.' '.$entry->street, 'caption'=>$entry->bedrooms.' bedrooms,  '.$entry->price.' per month');
         
       }
 ?>
 
-<div class="row offset4">
-  <div class="span14">
+<div class="row">
+  <!-- <div class="span14" style="margin: 0 auto !important;float: none !important;text-align: center;width: 1000px;"> -->
+  <div class="span14" style="margin: 0 auto !important;float: none !important;text-align: center;max-width: 1000px;">
   <?php 
       $this->widget('bootstrap.widgets.TbCarousel', array(
         'items'=> $images,
