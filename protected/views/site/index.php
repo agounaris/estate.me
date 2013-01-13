@@ -13,21 +13,22 @@ $this->pageTitle=Yii::app()->name;
         if ( $i == 0 ) {
           $class = 'item active';
           $i = 1;
-          $image[] = array('image'=>Yii::app()->baseUrl.'/images/'.$entry->image, 'label'=>$entry->house_number.' '.$entry->street, 'caption'=>$entry->bedrooms.' bedrooms,  '.$entry->price.' per month');
         }
+        $images[] = array('image'=>Yii::app()->baseUrl.'/images/'.$entry->image, 'label'=>$entry->house_number.' '.$entry->street, 'caption'=>$entry->bedrooms.' bedrooms,  '.$entry->price.' per month');
+        
       }
-
-      $this->widget('bootstrap.widgets.TbCarousel', array(
-        'items'=> $image,
-      ));
-
 ?>
 
-<!-- <div style="width:870px;;height:552px;margin: 0 auto;">
-<div id="myCarousel" class="carousel slide">
-  <div class="carousel-inner">
+<div class="row offset4">
+  <div class="span14">
+  <?php 
+      $this->widget('bootstrap.widgets.TbCarousel', array(
+        'items'=> $images,
+      ));  
+  ?>
+  </div>
+</div>
 
- -->
   	<?php 
   		// $i=0;
   		// foreach ($entries as $entry) {
