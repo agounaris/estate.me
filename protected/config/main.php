@@ -73,7 +73,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=estateme',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'changeme',
+			'password' => 'toor',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(
